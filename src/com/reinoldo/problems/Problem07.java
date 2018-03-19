@@ -2,16 +2,23 @@ package com.reinoldo.problems;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Problem7 {
+public class Problem07 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner in = new Scanner(System.in);
+		System.out.print("Digite a posição do número primo a qual deseja saber:  ");
+		long posicao = in.nextLong();
+		long tamanhoArray = 0;
+		
+		//Margem do array para se achar os néumeros primos
+		tamanhoArray = posicao * 100;
+		
 		List<Integer> numeros = new ArrayList<Integer>();
 		int listaDePrimos = 0;
 
-		for (int i = 0; i <= 120000; i++) {
+		for (int i = 0; i <= tamanhoArray; i++) {
 			numeros.add(i);
 		}
 		int contador;
@@ -30,8 +37,8 @@ public class Problem7 {
 				}
 				if (contador == 2) {
 					listaDePrimos++;
-					if(listaDePrimos == 10002){
-						System.out.println("O Número: " + numero + " é primo e esta na posicao: " + listaDePrimos);
+					if(listaDePrimos == posicao){
+						System.out.println("O número primo da posição  " + posicao + " é: " + numero);
 						break;
 					}
 					
